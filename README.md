@@ -1,0 +1,1 @@
+# angular-sharing-directive-controllers-readme
