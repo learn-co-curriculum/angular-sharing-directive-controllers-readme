@@ -174,4 +174,4 @@ angular
   .directive('tabs', tabs);
 ```
 
-You'l see that we can now access our parents controllers and methods! From here, we can add the tab information in to our parent's tab array.
+You'll see that we can now access the parent's controller and methods! From here, we can add the tab information in to our parent's tab array.
