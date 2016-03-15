@@ -2,7 +2,7 @@
 
 ## Overview
 
-Directives become even more powerful because we can communicate between their controllers. For instance, if we wanted to create a tabs component, we'd want to have our main `tabs` directive, and then directives for every tab. We can then link these together in order to create a our tab picker.
+Directives become even more powerful because we can communicate between their controllers. For instance, if we wanted to create a tabs component, we'd want to have our main `tabs` directive, and then directives for every tab. We can then link these together in order to create our tab picker.
 
 ## Objectives
 
@@ -62,7 +62,7 @@ angular
 
 You might notice a property we haven't mentioned before - `transclude`. Don't worry about this yet, we're going to learn this very shortly!
 
-In each tab, we've got a label for the lab. We're going to want to put this inside our `tabs__list` list. However, inside the `tabs` component we don't actually know what tabs we have inside the element.
+In each tab, we've got a label for the tab. We're going to want to put this inside our `tabs__list` list. However, inside the `tabs` component we don't actually know what tabs we have inside the element.
 
 One easy way to populate this list is if each of our `tab` directives notice our `tabs` directive that they exist. In our example, we've got three `tab` elements, so each of these will notify the parent controller.
 
@@ -178,4 +178,4 @@ angular
   .directive('tabs', tabs);
 ```
 
-You'l see that we can now access our parents controllers and methods! From here, we can add the tab information in to our parent's tab array.
+You'll see that we can now access the parent's controller and methods! From here, we can add the tab information in to our parent's tab array.
