@@ -32,6 +32,8 @@ Following on from our example above, we might have the following setup:
 </tabs>
 ```
 
+If we ran this now, our `tabs` component wouldn't know about the child tabs, and there is no list of tabs to choose from when we want to change what tab is active. This is where require comes in! Require allows us to notify the parent that it exists, so we can have a list of tabs at the top to change the active tab.
+
 Imagine our `tabs` directive looks like this:
 
 ```js
@@ -92,7 +94,9 @@ angular
   .directive('tabs', tabs);
 ```
 
-Here, we have a simple sort-of "transparent" directive. What this does (and again, more on the whole tranclusion concept later) is wrap our contents in a new `<div />`. For instance:
+You'll notice we've added `require` with the value `^tabs` - this is telling Angular to require the parent controller from our `tabs` component.
+
+Here, we have a simple sort-of "transparent" directive (our content is passed into our directive, not replaced). What this does (and again, more on the whole tranclusion concept later) is wrap our contents in a new `<div />`. For instance:
 
 ```html
 <tab label="Tab 3">
@@ -116,7 +120,7 @@ You'll notice we've also got a property named `link`. We're going to learn more 
 
 Normally, our link function has three parameters - scope (`$scope`), element (the mounted DOM element) and attrs (the attributes passed through to the directive). However, when we use `require`, we get a fourth - ctrl. This will be equal to the parents controller, allowing us to access everything to do with it.
 
-Let's add an `addTab` method to our `tabs` directives controller.
+Let's add an `addTab` method to our `tabs` directives controller. This will add a tab to the list so we can repeat and display the tabs labels at the top of the directive, so the user can click on them to change the active tab.
 
 ```js
 function tabs() {
