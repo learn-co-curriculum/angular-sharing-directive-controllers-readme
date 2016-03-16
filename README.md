@@ -2,7 +2,7 @@
 
 ## Overview
 
-Directives become even more powerful because we can communicate between their controllers. For instance, if we wanted to create a tabs component for navigation. We'd want to have our main `tabs` directive, and then directives for every tab. We can then link these together in order to create our tab picker.
+Directives become even more powerful because we can communicate between their controllers. For instance, say we wanted to create a tabs component for navigation. We'd want to have our main `tabs` directive, and then directives for every tab. We can then link these together in order to create our tab picker.
 
 ## Objectives
 
