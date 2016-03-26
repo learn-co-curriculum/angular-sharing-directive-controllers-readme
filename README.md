@@ -161,6 +161,14 @@ function tab() {
     },
     require: '^tabs',
     transclude: true,
+		controller: function () {
+      this.tabs = [];
+ 
+      this.addTab = function (tab) {
+        this.tabs.push(tab);
+      };
+    },
+    controllerAs: 'tabs',
     template: [
       '<div class="tabs__content" ng-if="tab.selected">',
         '<div ng-transclude></div>',
@@ -179,3 +187,5 @@ angular
 ```
 
 You'll see that we can now access the parent's controller and methods! From here, we can add the tab information in to our parent's tab array.
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/angular-sharing-directive-controllers-readme'>Angular Sharing Directive Controllers</a> on Learn.co and start learning to code for free.</p>
