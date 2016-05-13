@@ -64,7 +64,7 @@ You might notice a property we haven't mentioned before - `transclude`. Don't wo
 
 In each tab, we've got a label for the tab. We're going to want to put this inside our `tabs__list` list. However, inside the `tabs` component we don't actually know what tabs we have inside the element.
 
-One easy way to populate this list is if each of our `tab` directives notice our `tabs` directive that they exist. In our example, we've got three `tab` elements, so each of these will notify the parent controller.
+One easy way to populate this list is if each of our `tab` directives notify our `tabs` directive that they exist. In our example, we've got three `tab` elements, so each of these will notify the parent controller.
 
 Imagine our `tab` directive looked like this:
 
@@ -179,3 +179,5 @@ angular
 ```
 
 You'll see that we can now access the parent's controller and methods! From here, we can add the tab information in to our parent's tab array.
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/angular-sharing-directive-controllers-readme'>Angular Sharing Directive Controllers</a> on Learn.co and start learning to code for free.</p>
