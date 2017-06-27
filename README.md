@@ -14,7 +14,7 @@ Directives become even more powerful because we can communicate between their co
 
 ## require
 
-We can require the parent controller for a certain directive by using the `require` property in our directive. We pass in a string, with the directives name that we want.
+We can require the parent controller for a certain directive by using the `require` property in our directive. We pass in a string with the directive's name that we want.
 
 Following on from our example above, we might have the following setup:
 
@@ -32,7 +32,7 @@ Following on from our example above, we might have the following setup:
 </tabs>
 ```
 
-If we ran this now, our `tabs` component wouldn't know about the child tabs, and there is no list of tabs to choose from when we want to change what tab is active. This is where require comes in! Require allows us to notify the parent that it exists, so we can have a list of tabs at the top to change the active tab.
+If we ran this now, our `tabs` component wouldn't know about the child tabs, and there is no list of tabs to choose from when we want to change which tab is active. This is where require comes in! Require allows us to notify the parent that it exists, so we can have a list of tabs at the top to change the active tab.
 
 Imagine our `tabs` directive looks like this:
 
@@ -64,7 +64,7 @@ You might notice a property we haven't mentioned before - `transclude`. Don't wo
 
 In each tab, we've got a label for the tab. We're going to want to put this inside our `tabs__list` list. However, inside the `tabs` component we don't actually know what tabs we have inside the element.
 
-One easy way to populate this list is if each of our `tab` directives notify our `tabs` directive that they exist. In our example, we've got three `tab` elements, so each of these will notify the parent controller.
+One easy way to populate this list is if each of our `tab` directives notifies our `tabs` directive that they exist. In our example, we've got three `tab` elements, so each of these will notify the parent controller.
 
 Imagine our `tab` directive looked like this:
 
@@ -118,9 +118,9 @@ Will become:
 
 You'll notice we've also got a property named `link`. We're going to learn more about this later, but for now, assume that it is magic and we're going to be using it in this example.
 
-Normally, our link function has three parameters - scope (`$scope`), element (the mounted DOM element) and attrs (the attributes passed through to the directive). However, when we use `require`, we get a fourth - ctrl. This will be equal to the parents controller, allowing us to access everything to do with it.
+Normally, our link function has three parameters - scope (`$scope`), element (the mounted DOM element) and attrs (the attributes passed through to the directive). However, when we use `require`, we get a fourth - ctrl. This will be equal to the parent controller, allowing us to access everything to do with it.
 
-Let's add an `addTab` method to our `tabs` directives controller. This will add a tab to the list so we can repeat and display the tabs labels at the top of the directive, so the user can click on them to change the active tab.
+Let's add an `addTab` method to our `tabs` directive controller. This will add a tab to the list so we can repeat and display the tabs' labels at the top of the directive, so the user can click on them to change the active tab.
 
 ```js
 function tabs() {
@@ -186,6 +186,6 @@ angular
   .directive('tabs', tabs);
 ```
 
-You'll see that we can now access the parent's controller and methods! From here, we can add the tab information in to our parent's tab array.
+You'll see that we can now access the parent's controller and methods! From here, we can add the tab information into our parent's tab array.
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/angular-sharing-directive-controllers-readme'>Angular Sharing Directive Controllers</a> on Learn.co and start learning to code for free.</p>
